@@ -5,7 +5,7 @@ import datetime
 
 app = Flask(__name__)
 
-app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://flaskuser:flask@localhost/flask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://flaskuser:flask@localhost/flask'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 @app.route('/get', methods = ['Get'])
