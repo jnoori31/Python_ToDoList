@@ -16,12 +16,14 @@ class Articles(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     body = db.Column(db.Text())
-    date = db.Column(db.DateTime, default = datetime.datetime.now)
+    state = db.Column(db.Boolean, default=False)
+    date = db.Column(db.DateTime, default=datetime.datetime.now)
 
 
-    def __init__(self, title, body):
+    def __init__(self, title, body, state):
         self.title = title
         self.body = body
+        self.state = state
 
 
 class ArticleSchema(ma.Schema):
